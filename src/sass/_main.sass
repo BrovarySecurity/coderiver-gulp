@@ -1,0 +1,557 @@
+$font1: bebas
+$font2: HelveticaNeue
+$font3: georgia
+
+@font-face
+  font-family: $font1
+  src: local("bebas"), url(../fonts/bebas.ttf)
+
+@font-face
+  font-family: $font2
+  src: local("HelveticaNeue"), url(../fonts/HelveticaNeue.ttf)
+
+@font-face
+  font-family: $font3
+  src: local("georgia"), url(../fonts/georgia.ttf)
+
+html
+  overflow-x: hidden
+.clearfix
+  &:after
+    visibility: hidden
+    display: block
+    content: ""
+    clear: both
+    height: 0
+
+.wrapper
+  margin-top: 23px
+  width: 100%
+
+.header
+	@include clr
+	width: 940px
+	margin: auto
+	font-family: $font1
+	&__logo
+		margin-top: -11px
+		float: left
+		height: 34px
+		font-size: 36px
+		&--red
+			color: rgb(232, 96, 60)
+		&--yellow
+			color: rgb(243, 175, 157)
+
+.nav
+  float: right
+  font-size: 16px
+  &__ul
+    list-style-type: none
+    margin: 7px 4px 0px 0px
+  &__li
+    float: left
+    margin-left: 26px
+  &__link
+    color: rgb(185, 185, 185)
+    &:visited
+      color: rgb(185, 185, 185)
+    &:hover
+      color: rgb(232, 96, 60)
+    &:link
+      text-decoration: none
+
+.title
+  margin-top: 26px
+  width: 100%
+  height: 61px
+  display: grid
+  grid-template-columns: 1fr 940px 1fr
+  &__left
+    background-color: rgba(232, 96, 60, 0.5)
+    margin-right: 10px
+  &__center
+    background-color: rgb(232, 96, 60)
+  &__right
+    background-color: rgba(232, 96, 60, 0.5)
+    margin-left: 10px
+  &__text
+    display: block
+    margin: 13px 0px 0px 18px
+    color: white
+    font-family: $font1
+    font-size: 24px
+
+
+
+.content
+  margin-top: 24px
+  display: grid
+  grid-template-columns: 1fr 710px 230px 1fr
+  grid-auto-rows: 620px 611px 211px 200px
+  // grid-gap: 10px
+  grid-template-areas: "left topcenter right empty" "left2 topcenter2 right2 empty2" "left3 topcenter3 right3 empty3" "left4 topcenter4 right4 empty4"
+  &__icon
+    text-align: right
+    margin-right: 10px
+    // background-color: red
+    grid-area: left
+  &__nav
+    position: relative
+    margin-right: 40px
+    grid-area: topcenter
+    &__img
+      margin-bottom: 11px
+      &--next
+        position: absolute
+        top: 125px
+        left: 616px
+      &--previous
+        position: absolute
+        top: 125px
+        left: 18px
+    &__left-menu
+      display: inline-block
+      float: left
+      width: 111px
+      height: 236px
+    &__titles
+      display: inline-block
+      width: 100px
+      font-size: 12px
+      font-weight: 400
+      line-height: 20px
+      color: rgb(232, 96, 60)
+      font-family: $font1
+      margin-top: 6px
+      &--gray
+        display: inline-block
+        color: rgb(186, 186, 186)
+        font-family: $font2
+      &--date
+        margin: 6px 0px 4px 1px
+      &--tags
+        margin: 10px 0px 4px 1px
+      &--comments
+        margin: 10px 0px 4px 1px
+        margin-top: 10px
+        margin-bottom: 4px
+    &__main-title
+      color: rgb(232, 96, 60)
+      font-family: $font1
+      font-size: 18px
+      line-height: 18px
+      float: left
+      margin: 8px 0px 0px 35px
+      width: 484px
+    &__main-text
+      width: 503px
+      height: 137px
+      font-family: $font2
+      font-size: 12px
+      line-height: 18px
+      color: rgb(65, 65, 65)
+      margin: 44px 0px 0px 148px
+      & > p
+        margin-top: 18px
+
+
+
+
+  &__sidebar
+
+    margin-left: 12px
+    // background-color: green
+    grid-area: right
+    display: flex
+    flex-direction: column
+    &__category1
+      margin-bottom: 35px
+      & > img
+        float: right
+        margin-top: 4px
+    &__category2
+      margin-bottom: 40px
+      & > img
+        float: right
+        margin-top: 3px
+    &__category3
+      margin-top: -5px
+      & > img
+        float: right
+        margin-top: 3px
+    &__text
+      color: rgb(70, 70, 70)
+      font-family: $font2
+      font-size: 12px
+      margin-top: 17px
+    &__name
+      color: rgb(232, 96, 60)
+      font-family: $font1
+      font-size: 14px
+    &__ul
+      margin-top: -4px
+      list-style-type: none
+    &__li
+      margin-bottom: -1px
+      &:last-child
+        margin-top: -3px
+    &__a
+      &--text
+        color: rgb(70, 70, 70)
+        font-family: $font2
+        text-decoration: none
+        font-size: 12px
+    &__img
+      & img
+        max-width: 100%
+        max-height: 100%  
+      margin-top: 15px
+      margin-left: -3px
+      display: grid
+      grid-template-columns: 50px 50px 50px 50px
+      grid-template-rows: 50px 50px 50px 50px
+      grid-gap: 6px
+      &__div
+        width: 50px
+        height: 50px
+        background-color: rgb(243, 175, 157)
+        border: 1px solid rgb(232, 96, 60)
+
+
+  &__empty
+    // background-color: brown
+    margin-left: 10px
+    grid-area: empty
+    grid-row: 1/5
+  &__icon2
+    text-align: right
+    grid-area: left2
+    margin-right: 10px
+    // background-color: red
+  &__icon3
+    text-align: right
+    grid-area: left3
+    margin-right: 10px
+
+  &__nav2
+    // background-color: blue
+    margin-right: 40px
+    grid-area: topcenter2
+
+
+  &__sidebar2
+    grid-area: right2
+    margin-left: 10px
+    // background-color: green
+  &__nav3
+    margin-right: 40px
+    grid-area: topcenter3
+    &__quote
+      color: rgb(232, 102, 60)
+      font-family: $font3
+      font-size: 72px
+      line-height: 18px
+      float: left
+      margin: 40px 0px 0px 33px
+      font-style: normal
+    &__div
+      width: 654px
+      height: 111px
+      background-color: whitesmoke
+      color: rgb(71, 71, 71)
+      font-family: $font2
+      font-size: 13px
+      font-style: italic
+      line-height: 18px
+      & > p
+        margin-left: 76px
+        padding-top: 22px
+    & > img
+      margin-top: 41px
+
+  &__nav4
+    margin-right: 40ox
+    grid-area: topcenter4
+    & > div
+      width: 600px
+      margin: 0
+      margin-left: 2px
+      letter-spacing: 0.322px
+      clear: both
+    & > p
+      color: rgb(160, 160, 160)
+      font-family: $font2
+      font-size: 12px
+      line-height: 18px
+      float: left
+      margin: 6px 0px 0px 3px
+      overflow: hidden
+    & > span
+      width: 644px
+      float: left
+      margin: 18px 0px 0px 2px
+      color: rgb(65, 65, 65)
+      font-family: $font2
+      font-size: 12px
+      line-height: 18px
+    & > img
+      margin-top: 45px
+  &__icon4
+    text-align: right
+    grid-area: left4
+    margin-right: 10px
+  &__pages
+    &__ul
+      list-style-type: none
+      margin-top: 40px
+      margin-bottom: 40px
+    &__li
+      float: left
+      margin-right: 5px
+      font-family: $font1
+      font-size: 14px
+      line-height: 18px
+    &__a
+      & span
+        display: block
+        padding: 3px 0px 0px 11px
+      display: block
+      width: 26px
+      height: 26px
+      background-color: rgb(243, 178, 157)
+      text-decoration: none
+      font-family: $font1
+      font-size: 14px
+      line-height: 18px
+      &:link
+        color: white
+        font-family: $font1
+        font-size: 14px
+        line-height: 18px
+
+      &:hover
+        background-color: rgb(232, 102, 60)
+      &:active
+        color: white
+        font-family: $font1
+        font-size: 14px
+        line-height: 18px
+
+      &:visited
+        color: white
+        font-family: $font1
+        font-size: 14px
+        line-height: 18px
+      color: white
+      font-family: $font1
+      font-size: 14px
+      line-height: 18px
+
+.footer
+  margin-top: 65px
+  display: grid
+  grid-template-columns: 1fr 940px 1fr
+  height: 310px
+  &__left
+    margin-right: 14px
+    background-color: rgba(232, 102, 60, 0.5)
+  &__center
+    margin-left: -3px
+    margin-right: 5px
+    background-color: rgb(232, 102, 60)
+
+  &__right
+    margin-left: 7px
+    background-color: rgba(232, 102, 60, 0.5)
+  &__about
+    float: left
+    color: white
+    &__p
+      margin-bottom: 24px
+      font-size: 20px
+      font-family: $font1
+    & > span
+      display: block
+      font-size: 12px
+      font-family: $font2
+      margin-top: 5px
+      margin-bottom: 16px
+    margin: 34px 0px 0px 35px
+    height: 90px
+    width: 268px
+  &__twitter
+    margin: 34px 0px 0px 56px
+    float: left
+    color: white
+    width: 221px
+    height: 192px
+    & > span
+      display: block
+      font-size: 12px
+    &__system-message
+      float: left
+      width: 72px
+      color: rgb(243, 178, 157)
+    &__system-message2
+      margin-top: 5px
+      margin-bottom: 5px
+      float: left
+      width: 195px
+      color: rgb(243, 178, 157)
+    &__system-message3
+      float: left
+      width: 80px
+      color: rgb(243, 178, 157)
+    &__system-message4
+      float: left
+      width: 37px
+      color: white
+    &__system-message5
+      float: left
+      width: 37px
+      color: rgb(243, 178, 157)
+    &__follow
+      width: 10px
+
+@media screen and (max-width: 1100px)
+  .content
+    &__icon, &__icon2, &__icon3, &__icon4
+      display: none
+
+@media screen and (max-width: 960px)
+  .header
+    width: 98%
+  .title
+    grid-template-columns: 1fr 100% 1fr
+    &__left
+      margin: 0
+    &__center
+      width: 100%
+  .content
+    margin-top: 24px
+    grid-template-columns: 1fr 75% 25% 1fr
+    &__nav
+      &__main-title
+        width: 60%
+      &__img
+        width: 100%
+        &--next
+          top: 18%
+          left: 91%
+          width: 8%
+        &--previous
+          top: 18%
+          left: 2%
+          width: 8%
+      &__main-text
+        width: 74%
+      &__line
+        width: 100%
+        height: 14px
+    &__sidebar
+      &__img
+        grid-template-columns: 50px 50px
+      &__category1
+        & > img
+          float: none
+          // width: 100%
+          // height: 16px
+      &__category2
+        & > img
+          float: none
+          // width: 100%
+          // height: 16px
+      &__category3
+        & > img
+          float: none
+          // width: 100%
+          // height: 16px
+  .footer
+    &__left
+      margin: 0
+    grid-template-columns: 1fr 100% 1fr
+@media screen and (max-width: 768px)
+  .header
+    &__logo
+      float: none
+      width: 100px
+      margin: auto
+  .nav
+    padding-top: 5px
+    float: none
+    width: 430px
+    margin: auto
+  .content
+    grid-template-rows: 500px 500px 200px 180px
+    &__nav4
+      & > span
+        width: 100%
+    &__nav3
+      &__div
+        width: 100%
+        height: auto
+        & > p
+          margin: 0
+    &__nav
+      &__img
+        &--next
+          top: 10%
+          left: 92%
+        &--previous
+          top: 10%
+          left: 1%
+      &__left-menu
+        display: grid
+        grid-template-columns: 27vw 27vw 27vw
+        grid-template-rows: 30px 20px
+        grid-template-areas: "left center right" "left2 center2 right2"
+        height: 65px
+      &__titles
+        &--gray1
+          grid-area: left2
+        &--gray2
+          grid-area: center2
+        &--gray3
+          grid-area: right2
+        &--date
+          grid-area: left
+        &--tags
+          grid-area: center
+        &--comments
+          grid-area: right
+
+      &__main-title
+        width: 100%
+        margin: 0
+      &__main-text
+        margin: 0
+        float: left
+        width: 100%
+
+      &__line
+        display: none
+
+
+@media screen and (max-width: 600px)
+  .footer
+    &__twitter
+      display: none
+
+@media screen and (max-width: 430px)
+  .nav
+    float: none
+    width: 334px
+    margin: auto
+    &__li
+      margin-left: 6px
+  .content
+    &__nav
+
+      &__img
+        &--next
+          top: 8%
+          left: 92%
+        &--previous
+          top: 8%
+          left: 1%
